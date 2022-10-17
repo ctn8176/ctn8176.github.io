@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>3D Test</title>
+    <link rel="stylesheet" href="model-viewer-demo.css">
+</head>
+
+<body>
+    <div id="holder">
+        <div id="text">
+            <h1 class="sample-text">Play around with the model on the right!</h1>
+            <h1 class="sample-text">Just watch it rotate on its own or do it yourself with the mouse</h1>
+            <h1 class="sample-text">You can also zoom in the model!</h1>
+        </div>
+
+        <div id="model">
+            <model-viewer id="ImageSelector" camera-controls touch-action="pan-y" interaction-prompt="none" src="RobotExpressive.glb" ar alt="A 3D model of an astronaut">
+
+
+        <div class="controls1" ,="" id="image-controls">
+         <button type="button" onclick='document.getElementById("ImageSelector").src = "Astronaut.glb"' id="myBtn">Astronaut</button>
+         <button type="button" onclick='document.getElementById("ImageSelector").src = "RobotExpressive.glb"' id="myBtn">Robot</button>
+        </div>
+
+ 
+          <div class="controls">
+    <div>
+      <p>Metalness: <span id="metalness-value"></span></p>
+      <input id="metalness" type="range" min="0" max="1" step="0.01" value="1">
+    </div>
+    <div>
+      <p>Roughness: <span id="roughness-value"></span></p>
+      <input id="roughness" type="range" min="0" max="1" step="0.01" value="0">
+    </div>
+  </div>
+
+</model-viewer>
+        </div>
+    </div>
+
+    <!-- Loads model-viewer for modern browsers -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <!-- Loads model-viewer for older browsers -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    <script>
+const modelViewerParameters = document.querySelector("model-viewer#sphere");
+
+
+modelViewerParameters.addEventListener("load", (ev) => {
+
+  let material = modelViewerParameters.model.materials[0];
+
+  let metalnessDisplay = document.querySelector("#metalness-value");
+  let roughnessDisplay = document.querySelector("#roughness-value");
+
+  metalnessDisplay.textContent = material.pbrMetallicRoughness.metallicFactor;
+  roughnessDisplay.textContent = material.pbrMetallicRoughness.roughnessFactor;
+
+  // Defaults to gold
+  material.pbrMetallicRoughness.setBaseColorFactor([0.7294, 0.5333, 0.0392]);
+
+  document.querySelector('#metalness').addEventListener('input', (event) => {
+    material.pbrMetallicRoughness.setMetallicFactor(event.target.value);
+    metalnessDisplay.textContent = event.target.value;
+  });
+
+  document.querySelector('#roughness').addEventListener('input', (event) => {
+    material.pbrMetallicRoughness.setRoughnessFactor(event.target.value);
+    roughnessDisplay.textContent = event.target.value;
+  });
+});
+</script>
+
+</body>
+
+</html>
