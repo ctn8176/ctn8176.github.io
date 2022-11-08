@@ -203,7 +203,7 @@ const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
 
-var cameraFar = 5;
+var cameraFar = 6;
 
 document.body.appendChild(renderer.domElement);
 
@@ -277,7 +277,7 @@ hemiLight.position.set(0, 50, 0);
 scene.add(hemiLight);
 
 var dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
-dirLight.position.set(-8, 12, 8);
+dirLight.position.set(.5, 1, 0);
 dirLight.castShadow = true;
 dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
 // Add directional Light to scene    
