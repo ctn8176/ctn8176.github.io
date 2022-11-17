@@ -4608,6 +4608,8 @@ textarea.form-control-lg {
 .card-img-top,
 .card-img-bottom {
   width: 100%;
+  object-fit: cover;
+  height: 40vh;
 }
 
 .card-img,
