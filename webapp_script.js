@@ -5,9 +5,9 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 
 var theModel;
 
-const MODEL_PATH = "suit_components.glb";
+const MODEL_PATH = "Ch07_final.glb";
 
-var activeOption = 'top';
+var activeOption = 'Ch07_Suit';
 var loaded = false;
 
 const colors = [
@@ -193,7 +193,7 @@ const BACKGROUND_COLOR = 0xf1f1f1;
 const scene = new THREE.Scene();
 // Set background
 scene.background = new THREE.Color(BACKGROUND_COLOR);
-scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20, 100);
+// scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20, 100);
 
 const canvas = document.querySelector('#c');
 
@@ -203,24 +203,23 @@ const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
 
-var cameraFar = 6;
+var cameraFar = 120;
 
 document.body.appendChild(renderer.domElement);
 
-// Add a camerra
-var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+// Add a camera
+var camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = cameraFar;
 camera.position.x = 0;
+camera.position.y = 95;
 
 // Initial material
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 
 const INITIAL_MAP = [
-{ childID: "pants", mtl: INITIAL_MTL },
-{ childID: "jacket", mtl: INITIAL_MTL },
-{ childID: "top", mtl: INITIAL_MTL },
-{ childID: "pants", mtl: INITIAL_MTL },
-{ childID: "jacket", mtl: INITIAL_MTL }];
+{ childID: "Ch07_Suit", mtl: INITIAL_MTL },
+{ childID: "Ch07_Heels", mtl: INITIAL_MTL },
+{ childID: "Ch07_Pants", mtl: INITIAL_MTL }];
 
 
 // Init the object loader
@@ -233,15 +232,18 @@ loader.load(MODEL_PATH, function (gltf) {
     if (o.isMesh) {
       o.castShadow = true;
       o.receiveShadow = true;
+      o.metalness = 0;
+      o.roughness = 1;
     }
   });
 
   // Set the models initial scale   
-  theModel.scale.set(2, 2, 2);
+  theModel.scale.set(.4, .4, .4);
   theModel.rotation.y = Math.PI;
 
   // Offset the y position a bit
-  theModel.position.y = -1;
+  theModel.position.y = 1;
+  theModel.position.z = 50;
 
   // Set initial textures
   for (let object of INITIAL_MAP) {
@@ -271,22 +273,22 @@ function initColor(parent, type, mtl) {
 }
 
 // Add lights
-var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.61);
-hemiLight.position.set(0, 50, 0);
+var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 2);
+hemiLight.position.set(0, 1, 0);
 // Add hemisphere light to scene   
 scene.add(hemiLight);
 
-var dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
-dirLight.position.set(.5, 1, 0);
+var dirLight = new THREE.DirectionalLight(0xffffff, 1);
+dirLight.position.set(0, 1, 0);
 dirLight.castShadow = true;
 dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
 // Add directional Light to scene    
 scene.add(dirLight);
 
 // Floor
-var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
+var floorGeometry = new THREE.PlaneGeometry(500, 500, 1, 1);
 var floorMaterial = new THREE.MeshPhongMaterial({
-  color: 0xeeeeee,
+  color: 0x153944,
   shininess: 0 });
 
 
@@ -431,7 +433,7 @@ let initRotate = 0;
 
 function initialRotation() {
   initRotate++;
-  if (initRotate <= 120) {
+  if (initRotate <= 180) {
     theModel.rotation.y += Math.PI / 60;
   } else {
     loaded = true;
