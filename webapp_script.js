@@ -213,6 +213,8 @@ camera.position.z = cameraFar;
 camera.position.x = 0;
 camera.position.y = 95;
 
+//camera.lookAt(0, 10, 0);
+
 // Initial material
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 
@@ -241,9 +243,10 @@ loader.load(MODEL_PATH, function (gltf) {
   theModel.scale.set(.4, .4, .4);
   theModel.rotation.y = Math.PI;
 
-  // Offset the y position a bit
-  theModel.position.y = 1;
-  theModel.position.z = 50;
+  // Set the model position -- Default is centered on the platform
+  //theModel.position.x = 50;
+  //theModel.position.y = 1;
+  //theModel.position.z = 50;
 
   // Set initial textures
   for (let object of INITIAL_MAP) {
@@ -307,6 +310,10 @@ controls.enablePan = false;
 controls.dampingFactor = 0.1;
 controls.autoRotate = false; // Toggle this if you'd like the chair to automatically rotate
 controls.autoRotateSpeed = 0.2; // 30
+
+// Focus camera on roughly center of the model
+controls.target.set(0, 30, 0);
+controls.update();
 
 function animate() {
 
