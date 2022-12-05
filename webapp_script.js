@@ -312,8 +312,10 @@ controls.autoRotate = false; // Toggle this if you'd like the chair to automatic
 controls.autoRotateSpeed = 0.2; // 30
 
 // Focus camera on roughly center of the model
+camera.position.set(0, 125, 0);
 controls.target.set(0, 30, 0);
 controls.update();
+controls.saveState();
 
 function animate() {
 
@@ -387,6 +389,31 @@ function selectOption(e) {
     otherOption.classList.remove('--is-active');
   }
   option.classList.add('--is-active');
+
+  // Debugging info
+  console.log(activeOption);
+  //console.log(e.target);
+  //console.log(theModel.children);
+  //console.log(theModel.getWorldPosition());
+
+  // The "Zoom" functionality when selecting an object
+  // This is done in a very ugly way and WILL break easily
+  if (activeOption === "Ch07_Suit") {
+    camera.position.set(0, 100, 0);
+    controls.target.set(0, 50, 0);
+    controls.update();
+  } else if (activeOption === "Ch07_Pants") {
+    camera.position.set(0, 60, 0);
+    controls.target.set(0, 20, 0);
+    controls.update();
+  } else if (activeOption === "Ch07_Heels") {
+    camera.position.set(0, 25, 0);
+    controls.target.set(0, 5, 0);
+    controls.update();
+  } else {
+    controls.reset();
+  }
+
 }
 
 // Swatches
