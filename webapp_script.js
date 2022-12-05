@@ -213,6 +213,8 @@ camera.position.z = cameraFar;
 camera.position.x = 0;
 camera.position.y = 95;
 
+//camera.lookAt(0, 10, 0);
+
 // Initial material
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 
@@ -241,9 +243,10 @@ loader.load(MODEL_PATH, function (gltf) {
   theModel.scale.set(.4, .4, .4);
   theModel.rotation.y = Math.PI;
 
-  // Offset the y position a bit
-  theModel.position.y = 1;
-  theModel.position.z = 50;
+  // Set the model position -- Default is centered on the platform
+  //theModel.position.x = 50;
+  //theModel.position.y = 1;
+  //theModel.position.z = 50;
 
   // Set initial textures
   for (let object of INITIAL_MAP) {
@@ -307,6 +310,12 @@ controls.enablePan = false;
 controls.dampingFactor = 0.1;
 controls.autoRotate = false; // Toggle this if you'd like the chair to automatically rotate
 controls.autoRotateSpeed = 0.2; // 30
+
+// Focus camera on roughly center of the model
+camera.position.set(0, 125, 0);
+controls.target.set(0, 30, 0);
+controls.update();
+controls.saveState();
 
 function animate() {
 
@@ -380,6 +389,31 @@ function selectOption(e) {
     otherOption.classList.remove('--is-active');
   }
   option.classList.add('--is-active');
+
+  // Debugging info
+  console.log(activeOption);
+  //console.log(e.target);
+  //console.log(theModel.children);
+  //console.log(theModel.getWorldPosition());
+
+  // The "Zoom" functionality when selecting an object
+  // This is done in a very ugly way and WILL break easily
+  if (activeOption === "Ch07_Suit") {
+    camera.position.set(0, 100, 0);
+    controls.target.set(0, 50, 0);
+    controls.update();
+  } else if (activeOption === "Ch07_Pants") {
+    camera.position.set(0, 60, 0);
+    controls.target.set(0, 20, 0);
+    controls.update();
+  } else if (activeOption === "Ch07_Heels") {
+    camera.position.set(0, 25, 0);
+    controls.target.set(0, 5, 0);
+    controls.update();
+  } else {
+    controls.reset();
+  }
+
 }
 
 // Swatches
