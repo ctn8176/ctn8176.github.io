@@ -291,12 +291,18 @@ scene.add(dirLight);
 
 // Floor
 var floorGeometry = new THREE.PlaneGeometry(500, 500, 1, 1);
-var floorMaterial = new THREE.MeshPhongMaterial({
-  color: 0x153944,
-  shininess: 0 });
+// Load a hardwood floor texture and tile it
+var texture = new THREE.TextureLoader().load( 'img/woodfloor_.jpg' );
+texture.wrapS = THREE.RepeatWrapping;
+texture.wrapT = THREE.RepeatWrapping;
+texture.repeat.set(8, 8);
+var floorTexture = new THREE.MeshBasicMaterial( { map: texture } );
+//var floorMaterial = new THREE.MeshPhongMaterial({
+//  color: 0x153944,
+//  shininess: 0 });
 
-
-var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+//var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+var floor = new THREE.Mesh(floorGeometry, floorTexture);
 floor.rotation.x = -0.5 * Math.PI;
 floor.receiveShadow = true;
 floor.position.y = -1;
