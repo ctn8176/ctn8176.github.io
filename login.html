@@ -19,7 +19,7 @@
 
             <div class="login__content">
                 <div class="login__img">
-                     <model-viewer src="Ch07_final.glb" alt="A 3D model" auto-rotate="" camera-controls="" background-color="#455A64"></model-viewer>
+                     <model-viewer id="avatar" src="Ch07_final.glb" alt="A 3D model" auto-rotate="" camera-controls="" background-color="#455A64"></model-viewer>
                 </div>
 
 
@@ -102,5 +102,21 @@
      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
      <!-- Loads model-viewer for older browsers -->
      <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+        
+    <!-- Set metallic and roughness to render more human-like model --> 
+
+    <script>
+    const modelViewerParameters = document.querySelector("model-viewer#avatar");
+
+    modelViewerParameters.addEventListener("load", (ev) => {
+
+    let material = modelViewerParameters.model.materials[0];
+
+    material.pbrMetallicRoughness.setMetallicFactor(0);
+    material.pbrMetallicRoughness.setRoughnessFactor(1);
+
+    });
+    </script>
+        
     </body>
 </html>
