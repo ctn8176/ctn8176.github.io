@@ -1,314 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>u-Wear - shop and create your own fashion story - online creator - US </title>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>uWear: 3D modeling homepage </title>
+        <meta name="description" content="Homepage for uWear" />
+        <meta name="keywords" content="css3, transitions, vertical, layout, fullscreen, jquery, slide up, slide down" />
+        <meta name="author" content="uWear app" />
 
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
-
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="styles.css" rel="stylesheet" />
-
+        <!-- add logo -->
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/homepage_style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,400,700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+		<noscript><link rel="stylesheet" type="text/css" href="css/homepage_noscript.css" /></noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/homepage_noscript.css" /><![endif]-->
     </head>
-
     <body>
+		
+		<!-- uWear top bar -->
+        <div class="codrops-top">
+            <a href="http://tympanus.net/Tutorials/3DRestaurantMenu/">
+                <strong>&laquo; Previous Demo: </strong>3D Restaurant Menu Concept
+            </a>
+            <span class="right">
+				<a href="http://www.ikea.com/gb/en/">Products and images by IKEA</a>
+                <a href="http://tympanus.net/codrops/?p=11146">
+                    <strong>Back to the Codrops Article</strong>
+                </a>
+            </span>
+        </div><!--/ Codrops top bar -->
+		
+		<section id="ps-container" class="ps-container">
+		
+			<div class="ps-header">
+				<h1>Vertical Showcase Slider</h1>
+			</div><!-- /ps-header -->
+			
+			<div class="ps-contentwrapper">
+			
+				<div class="ps-content">
+					<h2>Bernhard</h2>
+					<span class="ps-price">£100</span>
+					<p>With restful springiness in the seat; prevents static sitting and provides enhanced seating comfort. Padded seat and back for enhanced seating comfort. Soft, hardwearing and easy care leather, which ages gracefully.</p>
+					<a href="login.html">Create an avatar</a>
+				</div>
+				
+				<div class="ps-content">
+					<h2>Tobias</h2>
+					<span class="ps-price">£65</span>
+					<p>For increased stability, re-tighten the screws about two weeks after assembly. Seat and back with restful flexibility; prevents a static sitting posture and enhances comfort.</p>
+					<a href="http://www.ikea.com/gb/en/catalog/products/90185320/#/20115038">Buy this item</a>
+				</div>
+				
+				<div class="ps-content">
+					<h2>Pöang</h2>
+					<span class="ps-price">£140</span>
+					<p>Frame made of layer-glued bent birch; a very strong and durable material. High back provides great support for your neck. Sheepskin has natural insulating properties, which make it feel warm and cosy to sit on. Extra cushions are available for variation and renewal.</p>
+					<a href="http://www.ikea.com/gb/en/catalog/products/S79889694/#/S59901017">Buy this item</a>
+				</div>
+				
+				<div class="ps-content">
+					<h2>Mellby</h2>
+					<span class="ps-price">£195</span>
+					<p>Easy to keep clean; removable, machine washable cover. Seat cushion with a top layer of memory foam; moulds to the precise contours of your body and regains its shape when you get up.</p>
+					<a href="http://www.ikea.com/gb/en/catalog/products/S99895000/#/S69894380">Buy this item</a>
+				</div>
+				
+				<div class="ps-content">
+					<h2>Torbjörn</h2>
+					<span class="ps-price">£30</span>
+					<p>Height adjustable for a comfortable sitting posture. The sloping seat gives a comfortable sitting position when leaning forwards.</p>
+					<a href="http://www.ikea.com/gb/en/catalog/products/70224756/">Buy this item</a>
+				</div>
+				
+			</div><!-- /ps-contentwrapper -->
+			
+			<div class="ps-slidewrapper">
+			
+				<div class="ps-slides">
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">u-Wear</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="shopping-categories.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="shopping-categories.html">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="shopping-categories.html">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="shopping-categories.html">New Arrivals</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+					<div id="model">
+            		<model-viewer class="background-image" src="Ch07_final.glb" alt="A 3D model" auto-rotate="" camera-controls="" background-color="#455A64"></model-viewer>
+        			</div>
 
+        			<div id="model">
+            		<model-viewer class="background-image" src="gold_dress.glb" alt="A 3D model" auto-rotate="" camera-controls="" background-color="#455A64"></model-viewer>
+        			</div>
 
-        <!-- Header-->
-        <header class="bg-pic py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Create your own style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Buy from local creators</p>
-                </div>
-            </div>
-        </header>
+        			<div id="model">
+            		<model-viewer class="background-image" src= "deep_blue_shirt.glb" alt="A 3D model" auto-rotate="" camera-controls="" background-color="#455A64"></model-viewer>
+        			</div> 
 
+        			<div id="model">
+            		<model-viewer class="background-image" src= " " alt="A 3D model" auto-rotate="" camera-controls="" background-color="#455A64"></model-viewer>
+        			</div> 
 
-        <!-- Section-->
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100">
+        			<div id="model">
+            		<model-viewer src= " " alt="A 3D model" auto-rotate="" camera-controls="" background-color="#455A64"></model-viewer>
+        			</div> 
 
+<!--
 
-                            <!-- Product image-->
-                            <img class="card-img-top" src="assets/silk_dress.webp" alt="silk dress" />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Silk Dress</h5>
-                                    <!-- Product price-->
-                                    $98.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Design options</a></div>
-                            </div>
-                        </div>
-                    </div>
+					<div style="background-image:url(images/1.jpg);"></div>
+					<div style="background-image:url(images/2.jpg);"></div>
+					<div style="background-image:url(images/3.jpg);"></div>
+					<div style="background-image:url(images/4.jpg);"></div>
+					<div style="background-image:url(images/5.jpg);"></div> -->
 
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+				</div>
+				
+				<nav>
+					<a href="#" class="ps-prev" ></a>
+					<a href="#" class="ps-next" ></a>
+				</nav>
+				
+			</div><!-- /ps-slidewrapper -->
+			
+		</section><!-- /ps-container -->
+			
+		<!-- jQuery if needed -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/homepage.js"></script>
+		<script type="text/javascript">
+			$(function() {
 
-
-
-
-                            <!-- Product image-->
-                            <model-viewer class="card-img-top" src="suit_components.glb" alt="suit" auto-rotate="" camera-controls="" background-color="#455A64" width="450" height="300"></model-viewer>
-
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$549.00</span>
-                                    $399.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="webapp.html">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-
-
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-
-
-                            <!-- Product image-->
-
-                            <img class="card-img-top" src="assets/man_sweater.jpeg" alt="men's sweater, white" />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-
-                            <model-viewer class="card-img-top" src="gold_dress.glb" alt="gold dress" auto-rotate="" camera-controls="" background-color="#455A64" width="450" height="300"></model-viewer> 
-
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-
-
-                            <!-- Product image-->
-
-
-                            <model-viewer class="card-img-top" src="nike_air_zoom_pegasus_36.glb" alt="denim shirt" auto-rotate="" camera-controls="" background-color="#455A64" width="450" height="300"></model-viewer> 
-
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="assets/winter_wear.jpeg" alt="winter styles" />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $120.00 - $280.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-
-
-                            <!-- Product image-->
-                            <model-viewer class="card-img-top" src="denim_shirt.glb" alt="denim shirt" auto-rotate="" camera-controls="" background-color="#455A64" width="450" height="300"></model-viewer> 
-
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    $18.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-
-
-                            <!-- Product image-->
-                            <img class="card-img-top" src="assets/maxi_dress.webp"alt="three maxi dresses" />
-
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="py-5 bg-pic">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; u-Wear 2022</p></div>
-        </footer>
-
-
-
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-
+				Slider.init();
+			
+			});
+		</script>
 
     <!-- Loads model-viewer for modern browsers -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
     <!-- Loads model-viewer for older browsers -->
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
 
 
 
