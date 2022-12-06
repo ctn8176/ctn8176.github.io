@@ -276,13 +276,14 @@ function initColor(parent, type, mtl) {
 }
 
 // Add lights
-var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 2);
-hemiLight.position.set(0, 1, 0);
+//var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.7);
+var hemiLight = new THREE.HemisphereLight( 0xffffbb, 0x080820, 0.7 );
+//hemiLight.position.set(0, 1, 0);
 // Add hemisphere light to scene   
 scene.add(hemiLight);
 
 var dirLight = new THREE.DirectionalLight(0xffffff, 1);
-dirLight.position.set(0, 1, 0);
+dirLight.position.set(10, 45, 40);
 dirLight.castShadow = true;
 dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
 // Add directional Light to scene    
@@ -290,12 +291,18 @@ scene.add(dirLight);
 
 // Floor
 var floorGeometry = new THREE.PlaneGeometry(500, 500, 1, 1);
-var floorMaterial = new THREE.MeshPhongMaterial({
-  color: 0x153944,
-  shininess: 0 });
+// Load a hardwood floor texture and tile it
+var texture = new THREE.TextureLoader().load( 'img/woodfloor_.jpg' );
+texture.wrapS = THREE.RepeatWrapping;
+texture.wrapT = THREE.RepeatWrapping;
+texture.repeat.set(8, 8);
+var floorTexture = new THREE.MeshBasicMaterial( { map: texture } );
+//var floorMaterial = new THREE.MeshPhongMaterial({
+//  color: 0x153944,
+//  shininess: 0 });
 
-
-var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+//var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+var floor = new THREE.Mesh(floorGeometry, floorTexture);
 floor.rotation.x = -0.5 * Math.PI;
 floor.receiveShadow = true;
 floor.position.y = -1;
