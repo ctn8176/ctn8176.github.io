@@ -146,13 +146,14 @@
 	box-shadow: inset 0 0 0 9999px rgba(179,157,250,0.1);
 }
 
-/* this does not work - troubelshoot */
+/* resizing image to fit container */
 
-.ps-slides > model-viewer{
-	width: 200px;
-  height: 300px;
-  object-fit: none;  
-  border: 3px solid #73AD21;
+model-viewer {
+	  display: block;
+    position: relative;
+    contain: strict;
+    width: auto;
+    height: 550px;
 }
 
 
