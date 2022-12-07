@@ -1,6 +1,6 @@
 var Slider = (function() {
 	
-	var $container = $( '#ps-container' ),
+	var $container = $( '.ps-container' ),
 		$contentwrapper = $container.children( 'div.ps-contentwrapper' ),
 		// the items (description elements for the slides/products)
 
