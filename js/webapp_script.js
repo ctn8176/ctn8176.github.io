@@ -203,6 +203,11 @@ const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
 
+
+// map HDR color values into LDR 
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 2;
+
 var cameraFar = 120;
 
 document.body.appendChild(renderer.domElement);
@@ -216,7 +221,7 @@ camera.position.y = 95;
 //camera.lookAt(0, 10, 0);
 
 // Initial material
-const INITIAL_MTL = new THREE.MeshPhongMaterial({color: 0x010f2d, shininess: 50 });
+const INITIAL_MTL = new THREE.MeshPhongMaterial({color: 0xffffff, shininess: 10 });
 
 const INITIAL_MAP = [
 { childID: "Ch07_Suit", mtl: INITIAL_MTL },
@@ -277,22 +282,22 @@ function initColor(parent, type, mtl) {
 
 // Add lights
 //var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.7);
-var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.7);
+var hemiLight = new THREE.HemisphereLight(0xffffff, 0x080820, 0.7);
 //hemiLight.position.set(0, 1, 0);
 // Add hemisphere light to scene   
 scene.add(hemiLight);
 
 var dirLight = new THREE.DirectionalLight(0xffffff, 1);
-dirLight.position.set(-5, 30, 10);
-//dirLight.castShadow = true;
-// dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
+dirLight.position.set(10, 45, 40);
+dirLight.castShadow = true;
+dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
 // Add directional Light to scene    
 scene.add(dirLight);
 
 // Add indirect light
-var ambiLight = new THREE.AmbientLight(0xffffff, .6);
-var ambiLight = new THREE.AmbientLight(0xffffff, .5);
-scene.add(ambiLight);
+// var ambiLight = new THREE.AmbientLight(0xffffff, .6);
+// var ambiLight = new THREE.AmbientLight(0xffffff, .5);
+// scene.add(ambiLight);
 
 // Floor
 var floorGeometry = new THREE.PlaneGeometry(500, 500, 1, 1);
