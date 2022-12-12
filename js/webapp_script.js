@@ -203,6 +203,11 @@ const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
 
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.3;
+
+
+
 var cameraFar = 120;
 
 document.body.appendChild(renderer.domElement);
@@ -216,7 +221,7 @@ camera.position.y = 95;
 //camera.lookAt(0, 10, 0);
 
 // Initial material
-const INITIAL_MTL = new THREE.MeshPhongMaterial({color: 0x010f2d, shininess: 50 });
+const INITIAL_MTL = new THREE.MeshPhongMaterial({color: 0xffffff, shininess: 10 });
 
 const INITIAL_MAP = [
 { childID: "Ch07_Suit", mtl: INITIAL_MTL },
@@ -290,9 +295,10 @@ dirLight.position.set(-5, 30, 10);
 scene.add(dirLight);
 
 // Add indirect light
-var ambiLight = new THREE.AmbientLight(0xffffff, .6);
-var ambiLight = new THREE.AmbientLight(0xffffff, .5);
-scene.add(ambiLight);
+//var ambiLight = new THREE.AmbientLight(0xffffff, .6);
+//var ambiLight = new THREE.AmbientLight(0xffffff, .5);
+// scene.add(ambiLight);
+
 
 // Floor
 var floorGeometry = new THREE.PlaneGeometry(500, 500, 1, 1);
