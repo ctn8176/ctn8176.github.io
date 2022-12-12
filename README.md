@@ -1,5 +1,3 @@
-# ctn8176.github.io
-
 # Networks project: u-Wear Studio
 Project made for NYU Stern Tech MBA 2022 - Foundations of Networks and Mobile Systems
 
@@ -22,14 +20,11 @@ Login files: login.html, css/login_style.css, js/login.js
 Webapp files: webapp.html, css/webapp_style.html, js/webapp_script.js
 
 # Contributors names and contact info
-Mahak Chhajer
-mc9519@stern.nyu.edu
+Mahak Chhajer, mc9519@stern.nyu.edu
 
-Christiana Nguyen
-ctn8176@stern.nyu.eud
+Christiana Nguyen, ctn8176@stern.nyu.eud
 
-Nicholas Imbriglia
-nji2011@stern.nyu.edu
+Nicholas Imbriglia, nji2011@stern.nyu.edu
 
 # Built via:
 - Model-viewer
