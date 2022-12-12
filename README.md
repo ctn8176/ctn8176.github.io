@@ -15,9 +15,9 @@ U-wear is a direct-to-customer fashion e-commerce company that enables small des
 4. Add the final product to your shopping cart
 
 ## Directory
-Homepage files: index.html, css/homepage.css, js/homepage.js
-Login files: login.html, css/login_style.css, js/login.js
-Webapp files: webapp.html, css/webapp_style.html, js/webapp_script.js
+1. Homepage files: index.html, css/homepage.css, js/homepage.js
+2. Login files: login.html, css/login_style.css, js/login.js
+3. Webapp files: webapp.html, css/webapp_style.html, js/webapp_script.js
 
 ## Contributors names and contact info
 Mahak Chhajer, mc9519@stern.nyu.edu
