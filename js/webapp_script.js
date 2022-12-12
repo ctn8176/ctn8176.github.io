@@ -291,6 +291,7 @@ scene.add(dirLight);
 
 // Add indirect light
 var ambiLight = new THREE.AmbientLight(0xffffff, .6);
+var ambiLight = new THREE.AmbientLight(0xffffff, .5);
 scene.add(ambiLight);
 
 // Floor
