@@ -1,6 +1,7 @@
 ## Networks project: u-Wear Studio
 Project made for NYU Stern Tech MBA 2022 - Foundations of Networks and Mobile Systems
 
+
 ### Description
 U-wear is a direct-to-customer fashion e-commerce company that enables small designers from across the globe to showcase their apparel to consumers. 
 
@@ -14,6 +15,7 @@ U-wear is a direct-to-customer fashion e-commerce company that enables small des
 2. Click on 'Start demo' to create an avatar
 3. Choose a color or texture to customize the garment(s)
 4. Add the final product to your shopping cart
+
 
 ### Directory
 1. Homepage files: index.html, css/homepage.css, js/homepage.js
