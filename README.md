@@ -9,7 +9,6 @@ U-wear is a direct-to-customer fashion e-commerce company that enables small des
 - Designers can use 3D avatars to simplify the design process by reducing the need for physical prototyping
 - Customers can use the customization feature on the platform to change the Size, color, fit and other elements of the garment
 
-
 ### Getting Started
 1. To access the login page from the homepage, click on the 'Create an avatar' button
 2. Click on 'Start demo' to create an avatar
