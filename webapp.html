@@ -8,9 +8,9 @@
     <title>u-Wear Demo</title>
     <meta name="description" content="uWear's 3d model color customizer app with Three.js." />
     <meta name="keywords" content="three.js, color customizer, app, tutorial, 3d model, blender, javascript" />
-    <link rel="shortcut icon" href="UWear_logo.png">
+    <link rel="shortcut icon" href="assets/icon/uWear_logo.png">
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="webapp_style.css" />
+    <link rel="stylesheet" type="text/css" href="css/webapp_style.css" />
     <!-- We add the loader CSS here so that assets don't pop in before the bundled CSS is loaded -->
 
     <style>
@@ -73,16 +73,16 @@
     <!-- These toggle the the different parts of the suit that can be edited, note data-option is the key that links to the name of the part in the 3D file -->
     <div class="options">
         <div class="option --is-active" data-option="Ch07_Suit">
-            <img src="jacket.png" alt="" />
+            <img src="assets/icon/jacket.png" alt="" />
         </div>
         <div class="option" data-option="Ch07_Pants">
-            <img src="pants.png" alt="" />
+            <img src="assets/icon/pants.png" alt="" />
         </div>
         <div class="option" data-option="Ch07_Heels">
-            <img src="shoe.png" alt="" />
+            <img src="assets/icon/shoe.png" alt="" />
         </div>
         <div class="option" data-option="Reset">
-            <img src="person.png" alt="" />
+            <img src="assets/icon/person.png" alt="" />
         </div>
     </div>
 
@@ -125,7 +125,7 @@
     <!-- This is a simple to use extension for three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
     <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
 
-    <script src="webapp_script.js"></script>
+    <script src="js/webapp_script.js"></script>
 </body>
 
 </html>
