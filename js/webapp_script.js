@@ -216,7 +216,7 @@ camera.position.y = 95;
 //camera.lookAt(0, 10, 0);
 
 // Initial material
-const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
+const INITIAL_MTL = new THREE.MeshPhongMaterial({color: 0x010f2d, shininess: 50 });
 
 const INITIAL_MAP = [
 { childID: "Ch07_Suit", mtl: INITIAL_MTL },
@@ -290,7 +290,7 @@ dirLight.position.set(-5, 30, 10);
 scene.add(dirLight);
 
 // Add indirect light
-var ambiLight = new THREE.AmbientLight(0xffffff, .5);
+var ambiLight = new THREE.AmbientLight(0xffffff, .6);
 scene.add(ambiLight);
 
 // Floor
