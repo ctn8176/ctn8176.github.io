@@ -5,34 +5,34 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 
 var theModel;
 
-const MODEL_PATH = "Ch07_final.glb";
+const MODEL_PATH = "assets/model/Ch07_final.glb";
 
 var activeOption = 'Ch07_Suit';
 var loaded = false;
 
 const colors = [
 {
-  texture: 'img/wood_.jpg',
+  texture: 'assets/fabric/wood_.jpg',
   size: [2, 2, 2],
   shininess: 60 },
 
 {
-  texture: 'img/fabric_.jpg',
+  texture: 'assets/fabric/fabric_.jpg',
   size: [4, 4, 4],
   shininess: 0 },
 
 {
-  texture: 'img/pattern_.jpg',
+  texture: 'assets/fabric/pattern_.jpg',
   size: [8, 8, 8],
   shininess: 10 },
 
 {
-  texture: 'img/denim_.jpg',
+  texture: 'assets/fabric/denim_.jpg',
   size: [3, 3, 3],
   shininess: 0 },
 
 {
-  texture: 'img/quilt_.jpg',
+  texture: 'assets/fabric/quilt_.jpg',
   size: [6, 6, 6],
   shininess: 0 },
 
@@ -277,22 +277,26 @@ function initColor(parent, type, mtl) {
 
 // Add lights
 //var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.7);
-var hemiLight = new THREE.HemisphereLight( 0xffffbb, 0x080820, 0.7 );
+var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.7);
 //hemiLight.position.set(0, 1, 0);
 // Add hemisphere light to scene   
 scene.add(hemiLight);
 
 var dirLight = new THREE.DirectionalLight(0xffffff, 1);
-dirLight.position.set(10, 45, 40);
-dirLight.castShadow = true;
-dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
+dirLight.position.set(-5, 30, 10);
+//dirLight.castShadow = true;
+// dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
 // Add directional Light to scene    
 scene.add(dirLight);
+
+// Add indirect light
+var ambiLight = new THREE.AmbientLight(0xffffff, .5);
+scene.add(ambiLight);
 
 // Floor
 var floorGeometry = new THREE.PlaneGeometry(500, 500, 1, 1);
 // Load a hardwood floor texture and tile it
-var texture = new THREE.TextureLoader().load( 'img/woodfloor_.jpg' );
+var texture = new THREE.TextureLoader().load( 'assets/fabric/woodfloor_.jpg' );
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.set(8, 8);
