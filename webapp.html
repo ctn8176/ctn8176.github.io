@@ -120,15 +120,26 @@
 	</div>
     <!-- The main three.js file -->
     <script src='https://unpkg.com/three@0.127.0/build/three.js'></script>
-    <!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
-    <script src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
-    <!-- This is a simple to use extension for three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
-    <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
 
-    <!-- updated three.js orbit control -->	
-    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/controls/OrbitControls.js"></script>
 
+    <!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box (Three.js CDN)
+    <script src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js'></script> -->
+
+    <!-- This is a simple to use extension for three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find (Three.js CDN)
+    <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script> -->
+
+    <!-- updated three.js orbit control (Three.js CDN)
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/controls/OrbitControls.js"></script> -->
+
+    <!--This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
+    <script src="js/GLTFLoader.js"></script>
+
+    <!-- updated three.js orbit control -->
+    <script src="js/OrbitControls.js"></script>
+
+    <!-- webapp js file -->
     <script src="js/webapp_script.js"></script>
+
 </body>
 
 </html>
