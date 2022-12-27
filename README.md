@@ -10,7 +10,7 @@ U-wear is a direct-to-customer fashion e-commerce company that enables small des
 - Customers can use the customization feature on the platform to change the Size, color, fit and other elements of the garment
 
 ### Getting Started
-1. To access the login page from the homepage, click on the 'Create an avatar' button
+1. To access the login page from the homepage, click on the 'Add to cart' button
 2. Click on 'Start demo' to create an avatar
 3. Choose a color or texture to customize the garment(s)
 4. Add the final product to your shopping cart
